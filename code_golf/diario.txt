@@ -1,0 +1,4 @@
+Diário do programa closed maps
+
+Entrada 1: Gabriel, 02-05-2015
+Implementei o programa do estilo code golf. Diferente de Python, Lua é uma linguegem extramamente minimalista, e possui muito menos funcionalidades em sua biblioteca padrão. Assim, o código deste estilo ficou com 16 linhas em Lua (o dobro de linhas do código em Python no livro).

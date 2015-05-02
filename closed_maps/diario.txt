@@ -1,0 +1,4 @@
+Diário do programa closed maps
+
+Entrada 1: Gabriel, 02-05-2015
+Implementei o programa do estilo closed maps. Para tal precisei aprender como codificar em lua a leitura de arquivos (apenas com a função io.lines), e como é feita a ordenação de arrays (função table.sort).
