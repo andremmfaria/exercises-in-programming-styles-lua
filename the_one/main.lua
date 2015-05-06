@@ -17,13 +17,6 @@ function TFTheOne:printme()
     print(self._value)
 end
 
-
-
---[[def read_file(path_to_file):
-    with open(path_to_file) as f:
-        data = f.read()
-    return data --]]
-
 function ler_arquivo(caminho_do_arquivo)
 	local arquivo = io.open(caminho_do_arquivo, "r")
     local conteudo_arquivo = arquivo:read("*all")
@@ -32,42 +25,23 @@ function ler_arquivo(caminho_do_arquivo)
     return conteudo_arquivo
 end
 
---[[def filter_chars(str_data):
-    pattern = re.compile('[\W_]+')
-    return pattern.sub(' ', str_data)--]]
-
 function filtra_caracteres(texto)
-    local expressao_regular = '[\W_]+'
+    local expressao_regular = '%W+'
     local novo_texto, numero_alteracoes = string.gsub(texto, expressao_regular, " ")
     return novo_texto
 end
-
---[[def normalize(str_data):
-    return str_data.lower()--]]
 
 function normaliza(texto)
     return texto:lower()
 end
 
---[[def scan(str_data):
-    return str_data.split()--]]
-
-
 function divide(texto)
-    resultado = {};
-    for palavra in (texto .. " "):gmatch("(.-)" .. " ") do
-        table.insert(resultado, palavra);
+    lista_palavra = {};
+    for palavra in texto:gmatch("%w+") do
+        table.insert(lista_palavra, palavra);
     end
-
-    return resultado;
+    return lista_palavra;
 end
-
---[[def remove_stop_words(word_list):
-    with open('../stop_words.txt') as f:
-        stop_words = f.read().split(',')
-    # add single-letter words
-    stop_words.extend(list(string.ascii_lowercase))
-    return [w for w in word_list if not w in stop_words] --]]
 
 function minusculas_ascii()
     local letras = {}
@@ -99,9 +73,8 @@ function remover_palavras(lista_palavras, palavras_remover)
     return lista_com_palavras_removidas
 end
 
-
 function remove_palavras_parada(lista_palavras)
-    local arquivo = io.open('stop_words.txt', "r")
+    local arquivo = io.open('../stop_words.txt', "r")
     local palavras_parada = {}
 
     for palavra in (arquivo:read("*all") .. ","):gmatch("(.-)" .. ",") do
@@ -114,17 +87,6 @@ function remove_palavras_parada(lista_palavras)
 
     return  lista_com_palavras_removidas
 end
-
-
---[[def frequencies(word_list):
-    word_freqs = {}
-    for w in word_list:
-        if w in word_freqs:
-            word_freqs[w] += 1
-        else:
-            word_freqs[w] = 1
-    return word_freqs --]]
-
 
 function define_frequencias(lista_palavras)
     local frequencia_palavras = {}
@@ -141,35 +103,28 @@ function define_frequencias(lista_palavras)
     return frequencia_palavras
 end
 
---[[def sort(word_freq):
-    return sorted(word_freq.iteritems(), key=operator.itemgetter(1), reverse=True)--]]
+function ordenar(frequencia_palavras)
+    local frequencia_ordenada = {}
+    for palavra, frequencia in pairs(frequencia_palavras) do
+        table.insert(frequencia_ordenada, {palavra = palavra, frequencia = frequencia})
+    end
+    table.sort(frequencia_ordenada, function(a, b) return a.frequencia > b.frequencia end)
 
-function sort(frequencia_palavras)
-    return frequencia_palavras
+    return frequencia_ordenada
 end
-
---[[def top25_freqs(word_freqs):
-    top25 = ""
-    for tf in word_freqs[0:25]:
-        top25 += str(tf[0]) + ' - ' + str(tf[1]) + '\n'
-    return top25--]]
 
 function top25_frequencias(frequencia_palavras)
     top25 = ""
     contador = 1
-    for palavra, frequencia in pairs(frequencia_palavras) do
+    for _, par_palavra_frequencia in ipairs(frequencia_palavras) do
         if contador > 25 then break end
-        top25 = top25 .. palavra .. ' - ' .. frequencia .. '\n'
+        top25 = top25 .. par_palavra_frequencia.palavra .. '  -  ' .. par_palavra_frequencia.frequencia .. '\n'
         contador = contador + 1
     end
-    print (top25)
+
     return top25
 end
 
-
-function soma2(numero)
-    return numero + 2
-end
 
 tftheone = TFTheOne.create(arg[1])
 :bind(ler_arquivo)
@@ -178,6 +133,6 @@ tftheone = TFTheOne.create(arg[1])
 :bind(divide)
 :bind(remove_palavras_parada)
 :bind(define_frequencias)
-:bind(sort)
+:bind(ordenar)
 :bind(top25_frequencias)
 :printme()
