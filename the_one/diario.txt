@@ -1,0 +1,7 @@
+﻿Diário do programa the one
+
+Entrada 1: Jéssica, 05-05-2015
+Iniciei a programação do programa do estilo the  one.
+
+Entrada 1: Jéssica, 06-05-2015
+Finalizei e limpei algumas funções de string que estavam dando errado e consertei a logica da medição da frequencia.
