@@ -1,3 +1,6 @@
+-- Módulo auxiliar obtido em:
+-- http://santos.nfshost.com/inifile.html
+
 inifile = {}
 
 local lines

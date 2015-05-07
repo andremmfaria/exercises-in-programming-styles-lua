@@ -1,3 +1,7 @@
-for file in *.lua; do luac -o $file.out $file; done;
-for file in *.lua.out; do mv "$file" "${file%.lua.out}.out"; done;
+#!/usr/bin/sh
+
+for file in *.lua; do
+    out=$(echo $file | sed -e "s/lua$/out/")
+    luac -o $out $file
+done
 mv *.out ../plugins

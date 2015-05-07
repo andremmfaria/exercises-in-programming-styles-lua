@@ -1,0 +1,10 @@
+Diário do programa closed maps
+
+Entrada 1: André, 02-05-2015
+Iniciado o no_commitment. Ainda está incompleto.
+
+Entrada 2: Gabriel e André, 07-05-2015
+Melhoramos a implementação deste estilo, mas ainda há alguns erros.
+
+Entrada 3: Gabriel, 07-05-2015
+Revi o programa deste estilo e corrigi os pequenos errors. Também alterei alguns nomes de variáveis, para ficar de acordo com a regra de não inventar nomes.

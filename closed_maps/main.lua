@@ -1,4 +1,4 @@
-#!/bin/lua
+#!/usr/bin/lua
 
 -- Objeto responsável por ler e armazenar as palavras do arquivo de entrada
 local words_storage_obj = {}

@@ -1,4 +1,4 @@
-#!/bin/lua
+#!/usr/bin/lua
 local stops = "," .. io.input('../stop_words.txt', 'r'):read("*a")
 local words = {}
 for word in io.input(arg[1], 'r'):read("*a"):lower():gmatch("%w%w+") do
