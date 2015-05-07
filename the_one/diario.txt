@@ -8,3 +8,6 @@ Finalizei e limpei algumas funções de string que estavam dando errado e conser
 
 Entrada 3: Jéssica, 06-05-2015
 Gabriel me ensinou a fazer pattern matching e a fazer o sort.
+
+Entrada 4: Gabriel, 07-05-2015
+Revi o código do estilo the-one e notei que este não seguia a regra do intervalo mágico, pois foram criadas mais de 6 funções auxiliares. Além disso, o código está em português, mas a classe que representa um 'monad' se chama 'tftheone', logo não seguia a regra não de não inventar nomes. Dessa forma, modifiquei o código para ficar de acordo com estas regras.

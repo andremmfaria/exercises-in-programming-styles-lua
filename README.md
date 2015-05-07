@@ -22,3 +22,9 @@ https://raw.githubusercontent.com/Nan-Zhang/exercises-in-programming-style-java/
 09-the-one   
 19-plugins(no commitment)  
 12-closed-maps  
+
+# Processo (Divisão de Tarefas):
+Gabriel: implementar 06-code-golf e 12-closed-maps
+Jéssica: implementar 09-the-one 
+André: implementar 19-plugins(no commitment)
+Douglas e Allan: Responsáveis pela documentação e revisão inicial dos algoritmos. Produção dos documentos de Arquitetura e dos readme's dos algoritmos.

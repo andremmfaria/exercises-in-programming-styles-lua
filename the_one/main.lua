@@ -1,138 +1,99 @@
-TFTheOne = {}
-TFTheOne.__index = TFTheOne
+#!/usr/bin/lua
 
-function TFTheOne.create(v)
-    local tftheone = {}
-    setmetatable(tftheone, TFTheOne)
-    tftheone._value = v
-    return tftheone
+-- Classe que representa um monade identidade
+MonadeId = {}
+MonadeId.__index = MonadeId
+
+function MonadeId.criar(valor)
+    local monade = {}
+    setmetatable(monade, MonadeId)
+    monade.valor = valor
+    return monade
 end
 
-function TFTheOne:bind(func)
-    self._value = func(self._value)
+function MonadeId:ligar(funcao)
+    self.valor = funcao(self.valor)
     return self
 end
 
-function TFTheOne:printme()
-    print(self._value)
+function MonadeId:imprimir()
+    io.write(self.valor)
 end
 
+-- Funções que calculam a relação termo-frequência
 function ler_arquivo(caminho_do_arquivo)
-	local arquivo = io.open(caminho_do_arquivo, "r")
-    local conteudo_arquivo = arquivo:read("*all")
-
+	local arquivo = io.open(caminho_do_arquivo, 'r')
+    local conteudo_arquivo = arquivo:read('*a')
     arquivo:close()
     return conteudo_arquivo
 end
 
-function filtra_caracteres(texto)
-    local expressao_regular = '%W+'
-    local novo_texto, numero_alteracoes = string.gsub(texto, expressao_regular, " ")
-    return novo_texto
-end
-
-function normaliza(texto)
-    return texto:lower()
-end
-
-function divide(texto)
-    lista_palavra = {};
-    for palavra in texto:gmatch("%w+") do
-        table.insert(lista_palavra, palavra);
+function dividir_palavras(texto)
+    local lista_palavras = {}
+    for palavra in texto:gmatch('%w%w+') do
+        table.insert(lista_palavras, palavra:lower())
     end
-    return lista_palavra;
+    return lista_palavras
 end
 
-function minusculas_ascii()
-    local letras = {}
-    for i = 0,25 do table.insert(letras, string.char(string.byte('a') + i)) end
-    return letras
-end
-
-function concatenar_tabelas(tabela_inicio,tabela_fim)
-    for indice_tabela = 1 , #tabela_fim  do
-        table.insert(tabela_inicio, tabela_fim[indice_tabela ])
+function remover_palavras_vazias(lista_palavras)
+    local palavras_vazias = {}
+    for linha in io.lines('../stop_words.txt') do
+        for palavra in linha:gmatch('%w+') do
+            palavras_vazias[palavra] = true
+        end
     end
-end
-
-function remover_palavras(lista_palavras, palavras_remover)
     local lista_com_palavras_removidas = {}
     for _, palavra in ipairs(lista_palavras) do
-        remover = false
-        for _, palavra_remover in ipairs(palavras_remover) do
-            if palavra_remover == palavra then
-                remover = true
-                break
-            end
-        end
-        if not(remover) then
+        if not palavras_vazias[palavra] then
             table.insert(lista_com_palavras_removidas, palavra)
         end
     end
-
     return lista_com_palavras_removidas
 end
 
-function remove_palavras_parada(lista_palavras)
-    local arquivo = io.open('../stop_words.txt', "r")
-    local palavras_parada = {}
-
-    for palavra in (arquivo:read("*all") .. ","):gmatch("(.-)" .. ",") do
-        table.insert(palavras_parada, palavra);
-    end
-
-    concatenar_tabelas(palavras_parada, minusculas_ascii())
-
-    local lista_com_palavras_removidas = remover_palavras(lista_palavras, palavras_parada)
-
-    return  lista_com_palavras_removidas
-end
-
-function define_frequencias(lista_palavras)
+function definir_frequencias(lista_palavras)
     local frequencia_palavras = {}
-
-    for _, palavra in  ipairs(lista_palavras) do
-        --if palavra == "chumps" then print "ok, é isso ai" end
-        if frequencia_palavras[palavra] ~= nil then
+    for _, palavra in ipairs(lista_palavras) do
+        if frequencia_palavras[palavra] then
             frequencia_palavras[palavra] = frequencia_palavras[palavra] + 1
         else
             frequencia_palavras[palavra] = 1
         end
     end
-
     return frequencia_palavras
 end
 
 function ordenar(frequencia_palavras)
     local frequencia_ordenada = {}
     for palavra, frequencia in pairs(frequencia_palavras) do
-        table.insert(frequencia_ordenada, {palavra = palavra, frequencia = frequencia})
+        local par = {palavra = palavra, frequencia = frequencia}
+        table.insert(frequencia_ordenada, par)
     end
-    table.sort(frequencia_ordenada, function(a, b) return a.frequencia > b.frequencia end)
-
+    local comparar_frequencias = function(a, b)
+        return a.frequencia > b.frequencia
+    end
+    table.sort(frequencia_ordenada, comparar_frequencias)
     return frequencia_ordenada
 end
 
-function top25_frequencias(frequencia_palavras)
-    top25 = ""
-    contador = 1
-    for _, par_palavra_frequencia in ipairs(frequencia_palavras) do
+function selecionar_25_mais_frequentes(lista_frequencia_palavras)
+    local mais_frequentes = ""
+    local contador = 1
+    for _, par in ipairs(lista_frequencia_palavras) do
         if contador > 25 then break end
-        top25 = top25 .. par_palavra_frequencia.palavra .. '  -  ' .. par_palavra_frequencia.frequencia .. '\n'
+        mais_frequentes = mais_frequentes .. par.palavra .. '  -  ' ..
+                par.frequencia .. '\n'
         contador = contador + 1
     end
-
-    return top25
+    return mais_frequentes
 end
 
-
-tftheone = TFTheOne.create(arg[1])
-:bind(ler_arquivo)
-:bind(filtra_caracteres)
-:bind(normaliza)
-:bind(divide)
-:bind(remove_palavras_parada)
-:bind(define_frequencias)
-:bind(ordenar)
-:bind(top25_frequencias)
-:printme()
+monade_id = MonadeId.criar(arg[1])
+:ligar(ler_arquivo)
+:ligar(dividir_palavras)
+:ligar(remover_palavras_vazias)
+:ligar(definir_frequencias)
+:ligar(ordenar)
+:ligar(selecionar_25_mais_frequentes)
+:imprimir()

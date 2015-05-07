@@ -1,6 +1,6 @@
 #!/bin/sh
 
-programs="code_golf closed_maps"
+programs="code_golf closed_maps the_one"
 
 for p in $programs; do
     cd $p
