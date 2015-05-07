@@ -1,10 +1,11 @@
-require inifile
+#!/usr/bin/lua
+require 'inifile'
 
 function main()
-  tfwords, tffreqs = load_plugins()
+  local tfwords, tffreqs = load_plugins()
   tfwords()
   tffreqs()
-  word_freqs = top25(extract_words(arg[1]))
+  local word_freqs = top25(extract_words(arg[1]))
   for key, value in pairs(word_freqs) do
     print(key .. "-" .. value)
   end
