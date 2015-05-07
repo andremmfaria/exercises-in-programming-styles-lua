@@ -8,3 +8,6 @@ Melhoramos a implementação deste estilo, mas ainda há alguns erros.
 
 Entrada 3: Gabriel, 07-05-2015
 Revi o programa deste estilo e corrigi os pequenos errors. Também alterei alguns nomes de variáveis, para ficar de acordo com a regra de não inventar nomes.
+
+Entrada 4: Gabriel, 08-05-2015
+Fiz os dois plugins que faltavam.
