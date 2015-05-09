@@ -28,3 +28,12 @@ Gabriel: implementar 06-code-golf e 12-closed-maps
 Jéssica: implementar 09-the-one   
 André: implementar 19-plugins(no commitment)  
 Douglas e Allan: Responsáveis pela documentação e revisão inicial dos algoritmos. Produção dos documentos de Arquitetura e dos readme's dos algoritmos.  
+
+# Objetivos do Trabalho
+- Estudar o estilo
+- Como é organizado [3, 6] (recuperar grafo de chamadas)
+- Não inventar nomes (recuperar o nome das funções/variáveis)
+- Manter simples
+- Livros diários
+- Título/autor (github)
+- Verificação e Validação (revisão)
