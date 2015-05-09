@@ -1,0 +1,10 @@
+Neste estilo, o objetivo é utilizar funcionalidades da linguagem e de bibliotecas
+a fim de minimizar o número de linhas de código.
+A abertura do arquivo de palavras descartáveis se dá pelas funções de IO da linguagem
+(input() e read(), equivalentes em Pyhton a open() e read()).
+Itera-se por cada palavra do arquivo de texto de entrada utilizando a função 
+gmatch de strings, descartando palavras de parada e armazenando as frequencias
+das outras palavras numa tabela. Basta então ordenar esta nova tabela por frequencias
+e imprimir as 25 entradas mais frequentes.
+Tentou-se usar o mínimo de linhas através do uso destes métodos da linguagem
+para manipulações basicas de strings e listas.
