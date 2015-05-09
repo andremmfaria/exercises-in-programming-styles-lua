@@ -1,0 +1,11 @@
+Neste estilo, o objetivo é separar cada funcionalidade em "objetos", sendo estes
+mapas para valores e funções. Em Lua, tabelas podem ser usadas de tal forma.
+Primeiramente, a lista de palavras a serem descartadas é definida pelas suas
+funções de inicialização (que lê do arquivo as palavras) e sua função de comparação,
+e sua tabela, similar a Python. Em seguida, a lista de palavras de entrada é 
+construída de forma similar.
+Com estes "objetos" criados, basta inicializá-los e usar as funções 
+implementadas para filtrar as palavras descartáveis, ordenar a nova lista e
+imprimir o resultado.
+Foram decompostos os objetos do problema em mapas com funções que referenciam
+seus atributos.
