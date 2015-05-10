@@ -11,3 +11,6 @@ Revi o programa deste estilo e corrigi os pequenos errors. Também alterei algun
 
 Entrada 4: Gabriel, 08-05-2015
 Fiz os dois plugins que faltavam.
+
+Entrada 5: Douglas, 10-05-2015
+Teste do código criado. Busca por bugs. Criação de Relatorio.txt detalhando o estilo de programação no_commitment.

@@ -5,3 +5,6 @@ Implementei o programa do estilo code golf. Diferente de Python, Lua é uma ling
 
 Entrada 2: Allan, 08-05-2015
 Revi o programa do estilo code golf escrito pelo Gabriel, comparando com o original em Python para rever corretude. Escrevi relatório em seguida.
+
+Entrada 3: Douglas, 10-05-2015
+Leitura e correção de um erro ortográfico na palavra Python, anteriormente escrito 'Pyhton'

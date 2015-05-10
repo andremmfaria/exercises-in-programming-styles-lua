@@ -14,3 +14,6 @@ Revi o código do estilo the-one e notei que este não seguia a regra do interva
 
 Entrada 5: Jéssica, 10-05-2015
 Após a revisão do Gabriel ainda ficou um pouco fora do intervalo mágico, estamos agora considerando as chamadas diretas e indiretas(chamadas através do ligar). Para isso tivemos que refatorar/agrupar mais as funções. Agora a arquitetura respeita em todos os níveis o intervalo mágico.
+
+Entrada 6: Douglas, 10-05-2015
+Teste do código. Busca por bugs. Criação de Relatorio.txt detalhando o estilo de programação the_one.
