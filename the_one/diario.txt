@@ -11,3 +11,6 @@ Gabriel me ensinou a fazer pattern matching e a fazer o sort.
 
 Entrada 4: Gabriel, 07-05-2015
 Revi o código do estilo the-one e notei que este não seguia a regra do intervalo mágico, pois foram criadas mais de 6 funções auxiliares. Além disso, o código está em português, mas a classe que representa um 'monad' se chama 'tftheone', logo não seguia a regra não de não inventar nomes. Dessa forma, modifiquei o código para ficar de acordo com estas regras.
+
+Entrada 5: Jéssica, 10-05-2015
+Após a revisão do Gabriel ainda ficou um pouco fora do intervalo mágico, estamos agora considerando as chamadas diretas e indiretas(chamadas através do ligar). Para isso tivemos que refatorar/agrupar mais as funções. Agora a arquitetura respeita em todos os níveis o intervalo mágico.
