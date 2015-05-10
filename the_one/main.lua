@@ -64,13 +64,6 @@ function definir_frequencias(lista_palavras)
     return frequencia_palavras
 end
 
-function achar_palavras_e_frequencias (texto)
-    local lista_palavras = dividir_palavras(texto)
-    local lista_sem_palavras_vazias = remover_palavras_vazias(lista_palavras)
-    local frequencias = definir_frequencias(lista_sem_palavras_vazias)
-    return frequencias
-end
-
 function ordenar(frequencia_palavras)
     local frequencia_ordenada = {}
     for palavra, frequencia in pairs(frequencia_palavras) do
@@ -81,6 +74,14 @@ function ordenar(frequencia_palavras)
         return a.frequencia > b.frequencia
     end
     table.sort(frequencia_ordenada, comparar_frequencias)
+    return frequencia_ordenada
+end
+
+function achar_frequencia_de_palavras_ordenada (texto)
+    local lista_palavras = dividir_palavras(texto)
+    local lista_sem_palavras_vazias = remover_palavras_vazias(lista_palavras)
+    local frequencias = definir_frequencias(lista_sem_palavras_vazias)
+    local frequencia_ordenada = ordenar(frequencias)
     return frequencia_ordenada
 end
 
@@ -98,7 +99,6 @@ end
 
 monade_id = MonadeId.criar(arg[1])
 :ligar(ler_arquivo)
-:ligar(achar_palavras_e_frequencias)
-:ligar(ordenar)
+:ligar(achar_frequencia_de_palavras_ordenada)
 :ligar(selecionar_25_mais_frequentes)
 :imprimir()
