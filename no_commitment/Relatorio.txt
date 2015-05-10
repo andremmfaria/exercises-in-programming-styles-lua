@@ -1,0 +1,5 @@
+Nesse estilo o objetivo é decompor o problema usando formas distintas de abstração. Essas podem estar representadas como procedimentos, funções, objetos, etc. Cada parte distinta deve ser desacoplada e compilada separadamente. É fácil identificar esse estilo de programação quando vemos a função main disjunta de todos os pacotes que compõe o software.
+
+É uma característica específica desse estilo que a função main carregue e use pacotes dinâmicamente. Isto possibilita novas implementações sem ter que recompilar a mesma. De forma que a função main saiba que pacotes utilizar, criam-se mecanismos, como por exemplo, arquivos de configuração, que definem que procedimentos serão executados em tempo de execução.
+
+No exemplo em lua, podemos ver um exemplo de "no commitment". O código possui um arquivo de configuração ("config.ini"), um shell de compilação ("compile.sh") e um diretório contendo todas as distintas formas de abstração (plugins-src).

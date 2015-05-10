@@ -1,0 +1,5 @@
+Nesse estilo o objetivo principal é criar uma forma de abstração para a qual os valores possam ser convertidos. No caso de exemplo, essa abstração chama-se "MonadeId".
+
+Essa forma de abstração encapsula valores de forma a que estes façam parte de um contexto, liga funções de forma a criar sequências de operações e desencapsula o valor de forma a providenciar formas de análise do resultado final. No código vemos que o contexto é criado através da função "criar", funções criam sequências através da função "ligar" e o resultado final é desencapsulado usando a função "imprimir". 
+
+Esse estilo permite resolver grandes problemas como um fluxo de funções (pipeline), todas ligadas e desencapsulando o resultado ao terminar a execução.
