@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 for file in plugins-src/*.lua; do
     out=$(echo $file | sed -e "s/lua$/out/")
