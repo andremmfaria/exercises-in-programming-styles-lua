@@ -5,3 +5,6 @@ Implementei o programa do estilo closed maps. Para tal precisei aprender como co
 
 Entrada 2: Allan, 08-05-2015
 Revi o programa do estilo closed maps escrito pelo Gabriel, comparando com o original em Python para rever corretude. Escrevi relatório em seguida.
+
+Entrada 3: Douglas 12-05-2015
+Inclusão do arquivo de arquitetura

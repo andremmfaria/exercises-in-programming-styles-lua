@@ -17,3 +17,6 @@ Após a revisão do Gabriel ainda ficou um pouco fora do intervalo mágico, esta
 
 Entrada 6: Douglas, 10-05-2015
 Teste do código. Busca por bugs. Criação de Relatorio.txt detalhando o estilo de programação the_one.
+
+Entrada 7: Douglas 12-05-2015
+Inclusão do arquivo de arquitetura

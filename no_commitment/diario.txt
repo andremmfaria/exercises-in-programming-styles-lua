@@ -17,3 +17,6 @@ Teste do código criado. Busca por bugs. Criação de Relatorio.txt detalhando o
 
 Entrada 6: Gabriel, 11-05-2015
 Apenas 2 plugins eram carregados, o que fugia da regra do intervalo mágico. Então, criei um novo plugin que imprime as 25 palavras com maior frequência, totalizando 3 plugins.
+
+Entrada 7: Douglas 12-05-2015
+Inclusão do arquivo de arquitetura

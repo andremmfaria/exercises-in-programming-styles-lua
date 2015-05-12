@@ -8,3 +8,6 @@ Revi o programa do estilo code golf escrito pelo Gabriel, comparando com o origi
 
 Entrada 3: Douglas, 10-05-2015
 Leitura e correção de um erro ortográfico na palavra Python, anteriormente escrito 'Pyhton'
+
+Entrada 4: Douglas 12-05-2015
+Inclusão do arquivo de arquitetura
