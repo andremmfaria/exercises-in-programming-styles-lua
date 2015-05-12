@@ -11,3 +11,7 @@ Leitura e correção de um erro ortográfico na palavra Python, anteriormente es
 
 Entrada 4: Douglas 12-05-2015
 Inclusão do arquivo de arquitetura
+
+Entrada 2: Allan, 12-05-2015
+Escritas as assertivas de entrada e saída do code golf
+
